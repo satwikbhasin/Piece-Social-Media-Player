@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.piece.v1.MusicPlayerController">
+    <HBox alignment="CENTER" layoutX="57.0" layoutY="146.0" prefHeight="288.0" prefWidth="886.0" spacing="10.0">
+        <Button fx:id="previousSong" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#previousSong" style="-fx-background-color: #323131;" textFill="#b2b2b2">
+            <HBox.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </HBox.margin>
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                    <Image url="@Images/NextBack.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+        <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="169.0" prefWidth="172.0">
+            <ImageView fx:id="songIcon" cache="true" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets top="-60.0" />
+                </VBox.margin>
+                <Image url="@Images/DieForYou.png" />
+            </ImageView>
+            <Label fx:id="songName" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="85.0" text="Die For You" textFill="#b2b2b2" wrapText="true">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+            </Label>
+            <Button fx:id="likeButton" mnemonicParsing="false" onMouseClicked="#handleLikeButton" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #000000;" text="Like" textFill="#b2b2b2">
+                <VBox.margin>
+                    <Insets bottom="5.0" top="10.0" />
+                </VBox.margin>
+            </Button>
+            <Label fx:id="likedByLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="65.0" prefWidth="172.0" textFill="#b2b2b2" wrapText="true">
+                <font>
+                    <Font name="System Bold" size="10.0" />
+                </font>
+                <VBox.margin>
+                    <Insets bottom="-70.0" />
+                </VBox.margin>
+            </Label>
+        </VBox>
+        <Button fx:id="nextSong" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#nextSong" style="-fx-background-color: #323131;" textFill="#b2b2b2">
+            <HBox.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </HBox.margin>
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@Images/NextBack.png" />
+                </ImageView>
+            </graphic>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </Button>
+    </HBox>
+    <HBox alignment="CENTER" layoutY="424.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="1000.0" spacing="10.0">
+        <Button fx:id="playPauseButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#handlePlayButton" pickOnBounds="false" prefHeight="18.0" prefWidth="18.0" snapToPixel="false" style="-fx-background-color: #323131;" textAlignment="CENTER">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <font>
+                <Font name="Microsoft PhagsPa Bold" size="12.0" />
+            </font>
+            <graphic>
+                <ImageView fx:id="playPauseImage" blendMode="SRC_ATOP" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                    <effect>
+                        <Blend />
+                    </effect>
+                    <viewport>
+                        <Rectangle2D />
+                    </viewport>
+                    <Image url="@Images/Play.png" />
+                </ImageView>
+            </graphic>
+            <HBox.margin>
+                <Insets />
+            </HBox.margin>
+        </Button>
+        <Slider fx:id="slider" prefHeight="14.0" prefWidth="681.0">
+            <HBox.margin>
+                <Insets right="-10.0" />
+            </HBox.margin>
+            <padding>
+                <Insets right="-5.0" />
+            </padding>
+        </Slider>
+        <Label fx:id="timeStamp" alignment="CENTER" contentDisplay="TEXT_ONLY" prefHeight="17.0" prefWidth="110.0" textAlignment="CENTER" textFill="#b2b2b2" HBox.hgrow="NEVER">
+            <cursor>
+                <Cursor fx:constant="DISAPPEAR" />
+            </cursor>
+            <HBox.margin>
+                <Insets right="-120.0" />
+            </HBox.margin>
+        </Label>
+    </HBox>
+   <Label fx:id="suggestionLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="671.0" layoutY="156.0" prefHeight="126.0" prefWidth="329.0" textAlignment="CENTER" textFill="#b2b2b2" wrapText="true">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+</Pane>
